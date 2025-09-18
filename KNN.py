@@ -18,7 +18,7 @@ def plot(error_rate,k):
     plt.grid(True)
     plt.show()
 
-def predictnerror(knn,testset_x,testset_y):
+def compute_error(knn, testset_x, testset_y):
     p = knn.predict(testset_x)
     return 1-accuracy_score(testset_y, p)
 
@@ -30,5 +30,5 @@ def trial(k,train_size,testset_x,testset_y):
         km = min(k, m)
         knn.set_params(n_neighbors=km)
         knn.fit(S_x[:m,:],S_y[:m])
-        error_rate.append(predictnerror(knn,testset_x,testset_y))
+        error_rate.append(compute_error(knn, testset_x, testset_y))
     return error_rate
