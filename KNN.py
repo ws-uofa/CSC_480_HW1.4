@@ -1,7 +1,7 @@
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import accuracy_score
 import matplotlib.pyplot as plt
-from tool import create_dataset
+from toolset import create_dataset
 
 M = [10,30,100,300,1000,3000]
 bayes_error_rate = 0.2

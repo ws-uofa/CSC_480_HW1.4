@@ -1,11 +1,12 @@
 import numpy as np
 
-from tool import sampling, labeling
+from toolset import sampling, labeling
 from KNN import trial
 import matplotlib.pyplot as plt
 
 bayes_error_rate = 0.2
 K = [1,2,4,8,16,32,64]
+M = [10,30,100,300,1000,3000]
 test_size = 10000
 train_size = 3000
 trials = 5
