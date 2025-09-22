@@ -1,11 +1,29 @@
 import numpy as np
 
 def sampling(size):
-    # Sample uniformly from [0,1]^2
+    """
+       Uniformly sample points from the 2D unit square [0,1]^2.
+
+       Args:
+           size (int): Number of samples to generate.
+
+       Returns:
+           np.ndarray: Array of shape (size, 2) containing sampled points.
+    """
     return np.random.uniform(0, 1, (size, 2))
 
 
 def labeling(testset):
+    """
+       Assign labels (binary classification) to a set of 2D points
+       based on a probability matrix.
+
+       Args:
+           testset (np.ndarray): Array of shape (n_samples, 2).
+
+       Returns:
+           np.ndarray: Boolean array of labels (True/False).
+    """
     # Initialize y as boolean array of labels
     y = np.zeros(testset.shape[0], dtype=bool)
 
@@ -36,6 +54,17 @@ def labeling(testset):
 
 
 def create_dataset(size):
+    """
+       Create a dataset of (X, y) pairs.
+
+       Args:
+           size (int): Number of samples.
+
+       Returns:
+           tuple: (X, y)
+               - X (np.ndarray): Features of shape (size, 2).
+               - y (np.ndarray): Labels of shape (size,).
+    """
     x = sampling(size)
     y = labeling(x)
     return x, y
